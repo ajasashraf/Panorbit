@@ -1,0 +1,47 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 250px;
+  background: rgb(109, 47, 200);
+  background: linear-gradient(90deg, rgba(109, 47, 200, 1) 12%, rgba(86, 65, 200, 1) 24%, rgba(86, 65, 200, 1) 69%, rgba(62, 87, 200, 1) 80%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 0 20px;
+  font-family: Arial;
+}
+
+.main h1 {
+  font-size: 40px;
+}
+
+.main p {
+  font-size: 18px;
+  width: 80%;
+  margin-top: -5px;
+}
+
+.main button {
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 15px;
+  width: 120px;
+  margin-top: 10px;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.user-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
