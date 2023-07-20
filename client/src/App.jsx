@@ -3,24 +3,24 @@ import HomePage from "./components/HomePage/HomePage";
 import SideBar from "./components/SideBar/SideBar";
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/Header/Header";
-import ProfilePage from "./components/ProfilePage/ProfilePage";
+import UserProfile from "./components/Pages/UserProfile/UserProfile";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Pages/Home/Home";
 
 function App() {
-  const [item, setItem] = useState("Profile");
-
   // useEffect(() => {
   //   console.log(item);
   // }, [item]);
 
   return (
-    <>
-      {/* <HomePage/> */}
-      <div className="flex">
-        <SideBar setItem={setItem} item={item} />
-      </div>
-      {/* <ProfilePage/> */}
-    </>
+    <div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/userProfile" element={<UserProfile />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

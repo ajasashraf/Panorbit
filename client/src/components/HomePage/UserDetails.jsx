@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom';
 import "./UserDetails.css";
 
 export default function UserDetails() {
   const [userData, setUserData] = useState(null);
+  const navigate=useNavigate();
+
   useEffect(() => {
     axios
       .get("https://panorbit.in/api/users.json")
@@ -13,13 +16,17 @@ export default function UserDetails() {
   if (!userData) {
     return <div>Loading...</div>;
   }
+  const userProfile=(userId)=>{
+    navigate('/userProfile',{state:userId})
+  }
+  
 
   return (
     <>
       <div>
         <div
           className="w-96 rounded-3xl bg-zinc-100  overflow-hidden shadow-lg"
-          style={{ marginLeft: "-38%", width: "160%" }}
+          style={{ marginLeft: "-26%", width: "140%" }}
         >
           <div className="px-6  my-10">
             <div className="font-semibold flex justify-center text-xl mb-8">
@@ -41,9 +48,9 @@ export default function UserDetails() {
                       />
                     </div>
                     <div>
-                      <a href="#">
+                      <a onClick={()=>userProfile(user.id)}>
                         <h5 className="text-gray-900  text-xl tracking-tight mb-2  py-3 px-14 dark:text-black">
-                          {user.username}
+                          {user.name}
                         </h5>
                       </a>
                     </div>
