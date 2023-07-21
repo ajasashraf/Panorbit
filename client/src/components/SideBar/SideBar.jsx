@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import Header from "../Header/Header";
+import ChatPage from "../Chat/ChatPage";
 export default function SideBar({ setItem, item }) {
   return (
     <>
@@ -30,6 +31,7 @@ export default function SideBar({ setItem, item }) {
         <div className="mt-8" style={{ marginLeft: "50%", width: "140%" }}>
           <Header item={item} />
         </div>
+        <ChatPage />
       </div>
     </>
   );

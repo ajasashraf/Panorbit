@@ -1,10 +1,227 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
+import "./ChatPage.css";
 
-export default function ChatPage() {
- 
+const AnotherComponent = () => {
   return (
-    <div>
-      
+    <div
+      className="h-96 absolute top-full left-0 bg-white rounded-lg shadow-lg  w-64 transition-transform duration-300 "
+      style={{ transform: "translateX(-200%)" }}
+    >
+      <div className="relative">
+        <button className="flex items-center w-64 h-10 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4">
+          <img
+            src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
+            className="object-cover h-8 w-8 rounded-full mr-2"
+            alt="User 7"
+          />
+          <span>John</span>
+        </button>
+        <div className="max-h-72 overflow-y-auto selector ">
+          <div className="w-full px-5 flex flex-col justify-between">
+            <div className="flex flex-col mt-5">
+              <div className="flex justify-end mb-4">
+                <div className="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white">
+                  Hello
+                </div>
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-8 w-8 rounded-full"
+                  alt=""
+                />
+              </div>
+              <div className="flex justify-start mb-4">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-8 w-8 rounded-full"
+                  alt=""
+                />
+                <div className="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white">
+                  How are you
+                </div>
+              </div>
+              <div className="flex justify-end mb-4">
+                <div>
+                  <div className="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Magnam, repudiandae.
+                  </div>
+                  <div className="mt-4 mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Debitis, reiciendis!
+                  </div>
+                </div>
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-8 w-8 rounded-full"
+                  alt=""
+                />
+              </div>
+              <div className="flex justify-start mb-4">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-8 w-8 rounded-full"
+                  alt=""
+                />
+                <div className="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white">
+                  happy holiday guys!
+                </div>
+              </div>
+            </div>
+            <div className="py-5">
+              <input
+                className="w-full bg-gray-300 py-5 px-3 rounded-xl"
+                type="text"
+                placeholder="type your message here..."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+const ChatPage = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [chat, setChat] = useState(false);
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+    setChat(false);
+  };
+  const UserClick = () => {
+    setChat(!chat);
+    console.log(chat);
+  };
+
+  return (
+    <>
+      <div
+        className={`fixed right-4 md:right-8 mb-12 md:mb-16 ${
+          isChatOpen ? "bottom-48" : "bottom-0"
+        }`}
+      >
+        <div className="relative">
+          <button
+            className={classNames(
+              "flex items-center w-64 h-10 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4",
+              {
+                "mb-10": isChatOpen,
+              }
+            )}
+            onClick={toggleChat}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 15l-2 2v-7a2 2 0 012-2h10a2 2 0 012 2v4l-2-2m2 0l3 3-3 3"
+              />
+            </svg>
+            <span>Chats</span>
+          </button>
+
+          <div
+            className={classNames(
+              "absolute top-full right-0 bg-white rounded-lg shadow-lg p-1 w-64 transition-transform duration-300",
+              {
+                hidden: !isChatOpen,
+                "translate-y-full": !isChatOpen,
+                "translate-y-0": isChatOpen,
+              }
+            )}
+          >
+            <div className="max-h-72 overflow-y-auto selector ">
+              <div className="flex items-center py-2" onClick={UserClick}>
+                <img
+                  src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 1"
+                />
+                <span>John</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/otT2199XwI8/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 2"
+                />
+                <span>Alex</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/L2cxSuKWbpo/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 3"
+                />
+                <span>Ajay</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 4"
+                />
+                <span>Faris</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 5"
+                />
+                <span>Leena</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 6"
+                />
+                <span>Rahul</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 7"
+                />
+                <span>Abraham</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 8"
+                />
+                <span>Reena</span>
+              </div>
+              <div className="flex items-center py-2">
+                <img
+                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  className="object-cover h-10 w-10 rounded-full mr-2"
+                  alt="User 8"
+                />
+                <span>Elen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {chat && (
+        <div className="fixed right-4 md:right-8 mb-12 md:mb-16 bottom-12 md:bottom-48">
+          <AnotherComponent />
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ChatPage;

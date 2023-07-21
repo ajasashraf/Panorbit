@@ -30,7 +30,7 @@ export default function Modal({ closeModal }) {
           id="container"
           onClick={handleClose}
           className="fixed inset-0 flex justify-end h-96"
-          style={{marginTop:"6rem"}}
+          style={{ marginTop: "6rem" }}
         >
           <div className="flex justify-center rounded-3xl mr-20">
             <div className="max-w-sm bg-white border border-gray-200 rounded-3xl shadow dark:bg-white dark:border-white">
@@ -49,7 +49,9 @@ export default function Modal({ closeModal }) {
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-zinc-600 dark:text-zinc">
                       {user.name}
                     </h5>
-                    <h6 className="text-zinc-400 text-center">{user.username}</h6>
+                    <h6 className="text-zinc-400 text-center">
+                      {user.username}
+                    </h6>
                   </a>
                 </div>
                 <div className="overflow-y-auto selector">
