@@ -7,6 +7,9 @@ import UserProfile from "./components/Pages/UserProfile/UserProfile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Pages/Home/Home";
 
+
+
+
 function App() {
   // useEffect(() => {
   //   console.log(item);
@@ -20,6 +23,8 @@ function App() {
           <Route exact path="/userProfile" element={<UserProfile />} />
         </Routes>
       </Router>
+    
+  
     </div>
   );
 }

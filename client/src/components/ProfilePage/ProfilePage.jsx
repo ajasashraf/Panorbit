@@ -18,6 +18,7 @@ export default function ProfilePage() {
     };
     fetchData();
   }, []);
+  console.log(data, "userProfile");
   return (
     <>
       {data.map((user) => (
@@ -41,13 +42,13 @@ export default function ProfilePage() {
                       {user.name}
                     </h2>
                     <div className="flex mt-2">
-                      <div className="w-26 text-right pl-5 text-zinc-400 text-xl  flex flex-col gap-2 ">
+                      <div className="w-26 text-right pl-5  font-semibold text-zinc-400 text-xl  flex flex-col gap-2 ">
                         <p>Username :</p>
                         <p>Email :</p>
                         <p>Phone : </p>
                         <p>Website : </p>
                       </div>
-                      <div className="pl-2 font-bold text-zinc-600 text-xl  flex flex-col gap-2">
+                      <div className="pl-2 font-bold  text-zinc-600 text-xl  flex flex-col gap-2">
                         <p>{user.username}</p>
                         <p>{user.email}</p>
                         <p> {user.phone}</p>
