@@ -14,7 +14,6 @@ export default function Header({ item }) {
     if (!modal) {
       setModal(true);
     }
-    console.log(modal);
   };
   const closeModal = () => {
     setModal(false);
@@ -29,7 +28,7 @@ export default function Header({ item }) {
     };
     fetchData();
   }, []);
-  console.log(data);
+
   return (
     <>
       {data.map((user) => (
@@ -38,7 +37,7 @@ export default function Header({ item }) {
           key={user.id}
         >
           <h1 className="text-2xl font-semibold">{item}</h1>
-          <div className="flex items-center ">
+          <div className="flex items-center cursor-pointer ">
             <div className="block mx-auto h-25 sm:mx-0 sm:shrink-0 object-cover  w-11 pr-3">
               <img src={user.profilepicture} className="rounded-full  " />
             </div>

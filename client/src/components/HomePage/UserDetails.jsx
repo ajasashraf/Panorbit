@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./UserDetails.css";
 
 export default function UserDetails() {
   const [userData, setUserData] = useState(null);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -16,10 +16,9 @@ export default function UserDetails() {
   if (!userData) {
     return <div>Loading...</div>;
   }
-  const userProfile=(userId)=>{
-    navigate('/userProfile',{state:userId})
-  }
-  
+  const userProfile = (userId) => {
+    navigate("/userProfile", { state: userId });
+  };
 
   return (
     <>
@@ -48,7 +47,7 @@ export default function UserDetails() {
                       />
                     </div>
                     <div>
-                      <a onClick={()=>userProfile(user.id)}>
+                      <a onClick={() => userProfile(user.id)}>
                         <h5 className="text-gray-900  text-xl tracking-tight mb-2  py-3 px-14 dark:text-black">
                           {user.name}
                         </h5>

@@ -5,10 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Pages/Home/Home";
 
 function App() {
-  // useEffect(() => {
-  //   console.log(item);
-  // }, [item]);
-
   return (
     <div>
       <Router>

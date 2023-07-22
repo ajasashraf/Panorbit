@@ -6,14 +6,14 @@ const AnotherComponent = () => {
   return (
     <div
       className="h-96 absolute top-full left-0 bg-white rounded-lg shadow-lg  w-64 transition-transform duration-300 "
-      style={{ transform: "translateX(-200%)" }}
+      style={{ transform: "translateX(-235%)" }}
     >
       <div className="relative">
-        <button className="flex items-center w-64 h-10 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4">
+        <button className="flex items-center w-64 h-12 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4">
           <img
-            src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
+            src="./src/assets/Images/images3.jpeg"
             className="object-cover h-8 w-8 rounded-full mr-2"
-            alt="User 7"
+            alt="User "
           />
           <span>John</span>
         </button>
@@ -25,14 +25,14 @@ const AnotherComponent = () => {
                   Hello
                 </div>
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images2.jpeg"
                   className="object-cover h-8 w-8 rounded-full"
                   alt=""
                 />
               </div>
               <div className="flex justify-start mb-4">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images3.jpeg"
                   className="object-cover h-8 w-8 rounded-full"
                   alt=""
                 />
@@ -46,20 +46,16 @@ const AnotherComponent = () => {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Magnam, repudiandae.
                   </div>
-                  <div className="mt-4 mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Debitis, reiciendis!
-                  </div>
                 </div>
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images2.jpeg"
                   className="object-cover h-8 w-8 rounded-full"
                   alt=""
                 />
               </div>
               <div className="flex justify-start mb-4">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images3.jpeg"
                   className="object-cover h-8 w-8 rounded-full"
                   alt=""
                 />
@@ -68,11 +64,11 @@ const AnotherComponent = () => {
                 </div>
               </div>
             </div>
-            <div className="py-5">
+            <div className="py-5 mb-20">
               <input
-                className="w-full bg-gray-300 py-5 px-3 rounded-xl"
+                className="w-full bg-gray-500 py-2 px-3 rounded-xl"
                 type="text"
-                placeholder="type your message here..."
+                placeholder="Type your message here..."
               />
             </div>
           </div>
@@ -97,14 +93,14 @@ const ChatPage = () => {
   return (
     <>
       <div
-        className={`fixed right-4 md:right-8 mb-12 md:mb-16 ${
-          isChatOpen ? "bottom-48" : "bottom-0"
+        className={`fixed right-4 md:right-20 mb-12 md:mb-0  ${
+          isChatOpen ? "bottom-56" : "bottom-0"
         }`}
       >
         <div className="relative">
           <button
             className={classNames(
-              "flex items-center w-64 h-10 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4",
+              "flex items-center w-64 h-12 bg-blue-600 text-white shadow-lg outline-none focus:outline-none rounded-t-lg px-4",
               {
                 "mb-10": isChatOpen,
               }
@@ -113,7 +109,7 @@ const ChatPage = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2"
+              className="h-7 w-12 mr-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -121,11 +117,12 @@ const ChatPage = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 15l-2 2v-7a2 2 0 012-2h10a2 2 0 012 2v4l-2-2m2 0l3 3-3 3"
+                strokeWidth="2"
+                d="M21 2H3a2 2 0 00-2 2v12a2 2 0 002 2h7l4 4 4-4h1a2 2 0 002-2V4a2 2 0 00-2-2z"
               />
             </svg>
-            <span>Chats</span>
+
+            <span className="text-xl ">Chats</span>
           </button>
 
           <div
@@ -139,9 +136,12 @@ const ChatPage = () => {
             )}
           >
             <div className="max-h-72 overflow-y-auto selector ">
-              <div className="flex items-center py-2" onClick={UserClick}>
+              <div
+                className="flex items-center py-2 cursor-pointer"
+                onClick={UserClick}
+              >
                 <img
-                  src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
+                  src="./src/assets/Images/images3.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 1"
                 />
@@ -149,7 +149,7 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/otT2199XwI8/600x600"
+                  src="./src/assets/Images/images1.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 2"
                 />
@@ -157,15 +157,15 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/L2cxSuKWbpo/600x600"
+                  src="./src/assets/Images/images2.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 3"
                 />
-                <span>Ajay</span>
+                <span>Leena</span>
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images3.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 4"
                 />
@@ -173,15 +173,15 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images1.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 5"
                 />
-                <span>Leena</span>
+                <span>Ajay</span>
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images2.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 6"
                 />
@@ -189,7 +189,7 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images3.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 7"
                 />
@@ -197,7 +197,7 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images1.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 8"
                 />
@@ -205,7 +205,7 @@ const ChatPage = () => {
               </div>
               <div className="flex items-center py-2">
                 <img
-                  src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+                  src="./src/assets/Images/images1.jpeg"
                   className="object-cover h-10 w-10 rounded-full mr-2"
                   alt="User 8"
                 />

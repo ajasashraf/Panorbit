@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./ProfilePage.css";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 export default function ProfilePage() {
@@ -18,7 +17,7 @@ export default function ProfilePage() {
     };
     fetchData();
   }, []);
-  console.log(data, "userProfile");
+
   return (
     <>
       {data.map((user) => (
