@@ -19,7 +19,7 @@ export default function UserPage({ item }) {
           <ComingSoonPage />
         </>
       )}
-      {item === "Todo" && (
+      {item === "ToDo" && (
         <>
           <ComingSoonPage />
         </>
