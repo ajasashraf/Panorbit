@@ -32,7 +32,7 @@ export default function UserDetails() {
               Select an account
             </div>
           </div>
-          <div className="h-96 overflow-y-auto selector">
+          <div className="h-96 overflow-y-auto selector cursor-pointer">
             {userData.users.map((user) => (
               <>
                 <div className="bg-white">
