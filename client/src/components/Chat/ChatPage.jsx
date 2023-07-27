@@ -87,7 +87,6 @@ const ChatPage = () => {
   };
   const UserClick = () => {
     setChat(!chat);
-    console.log(chat);
   };
 
   return (

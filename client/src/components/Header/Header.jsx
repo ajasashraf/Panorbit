@@ -10,7 +10,6 @@ export default function Header({ item }) {
   const location = useLocation();
   const userId = location.state;
   const openModal = () => {
-    console.log(modal, "sdf");
     if (!modal) {
       setModal(true);
     }
