@@ -1,4 +1,4 @@
-# Panorbit
+# Waves
 
 Project: User Profile Management Single Page Application
 
